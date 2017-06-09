@@ -42,13 +42,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Invoking install_openvz.sh"
-./install_openvz.sh
-if [ $? -ne 0 ]; then
-  echo ""
-  echo "Error installing OpenVZ. Quitting!"
-  exit 1
-fi
 
 echo "Invoking install_mongodb.sh"
 ./install_mongodb.sh
