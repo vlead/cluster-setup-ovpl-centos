@@ -33,28 +33,12 @@ yum update -y
 yum install -y vim rsync
 
 
-export PATH="$PATH:/usr/local/git/bin"
-echo "Invoking install_dependencies.sh"
-./install_dependencies.sh
-if [ $? -ne 0 ]; then
-  echo ""
-  echo "Error installing dependencies. Quitting!"
-  exit 1
-fi
 
 echo "Invoking install_openvz.sh"
 ./install_openvz.sh
 if [ $? -ne 0 ]; then
   echo ""
   echo "Error installing OpenVZ. Quitting!"
-  exit 1
-fi
-
-echo "Invoking install_mongodb.sh"
-./install_mongodb.sh
-if [ $? -ne 0 ]; then
-  echo ""
-  echo "Error installing MongoDB. Quitting!"
   exit 1
 fi
 
